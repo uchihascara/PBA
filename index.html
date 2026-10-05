@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sarawak Tour Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <!-- HOME PAGE -->
+    <div data-role="page" id="home">
+
+        <div data-role="header">
+            <h1>Sarawak Tour</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+
+            <img src="img/logo.webp" alt="Sarawak Tour Logo" class="main-image">
+
+            <h2>Welcome to Sarawak Tour Package</h2>
+
+            <p>
+                Explore beautiful destinations in Sarawak
+                with our affordable tour packages.
+            </p>
+
+            <a href="#packages" class="ui-btn ui-corner-all" data-transition="slide">
+                View Tour Packages
+            </a>
+
+            <a href="#booking" class="ui-btn ui-corner-all" data-transition="slide">
+                Book Now
+            </a>
+
+            <a href="#contact" class="ui-btn ui-corner-all" data-transition="slide">
+                Contact Us
+            </a>
+
+        </div>
+
+        <div data-role="footer">
+            <h4>Sarawak Tour 2026</h4>
+        </div>
+
+    </div>
+
+
+    <!-- TOUR PACKAGES -->
+    <div data-role="page" id="packages">
+
+        <div data-role="header">
+            <a href="#home" data-transition="slide" data-direction="reverse">Back</a>
+            <h1>Tour Packages</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+
+            <!-- KUCHING -->
+            <div class="package">
+
+                <img src="img/kuching.webp" alt="Kuching City" class="package-image">
+
+                <h2>Kuching City Tour</h2>
+
+                <p>
+                    Explore Kuching city and famous tourist attractions.
+                </p>
+
+                <a href="#" title="3 Days 2 Nights - RM350" class="ui-btn ui-mini">
+                    Package Details
+                </a>
+
+                <a href="#kuchingInfo" data-rel="popup" class="ui-btn ui-mini">
+                    More Information
+                </a>
+
+                <div data-role="popup" id="kuchingInfo" class="popup-box">
+
+                    <h3>Kuching City Tour</h3>
+
+                    <p>Duration: 3 Days 2 Nights</p>
+
+                    <p>Price: RM350</p>
+
+                    <p>
+                        Destinations: Kuching Waterfront,
+                        Semenggoh and Sarawak Cultural Village.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MIRI -->
+            <div class="package">
+
+                <img src="img/miri.webp" alt="Miri City" class="package-image">
+
+                <h2>Miri Adventure Tour</h2>
+
+                <p>
+                    Enjoy nature and adventure around Miri.
+                </p>
+
+                <a href="#" title="3 Days 2 Nights - RM400" class="ui-btn ui-mini">
+                    Package Details
+                </a>
+
+                <a href="#miriInfo" data-rel="popup" class="ui-btn ui-mini">
+                    More Information
+                </a>
+
+                <div data-role="popup" id="miriInfo" class="popup-box">
+
+                    <h3>Miri Adventure Tour</h3>
+
+                    <p>Duration: 3 Days 2 Nights</p>
+
+                    <p>Price: RM400</p>
+
+                    <p>
+                        Destinations: Miri City,
+                        Canada Hill and Lambir Hills.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <a href="#booking" class="ui-btn ui-corner-all" data-transition="slide">
+                Book a Package
+            </a>
+
+        </div>
+    </div>
+
+
+    <!-- BOOKING -->
+    <div data-role="page" id="booking">
+
+        <div data-role="header">
+            <a href="#packages" data-transition="slide" data-direction="reverse">Back</a>
+            <h1>Booking</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+
+            <form id="bookingForm">
+
+                <label for="bookingName">Full Name:</label>
+                <input type="text" id="bookingName" placeholder="Enter your name">
+
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" placeholder="Enter phone number">
+
+                <label for="bookingEmail">Email:</label>
+                <input type="email" id="bookingEmail" placeholder="Enter email">
+
+                <label for="travelDate">Travel Date:</label>
+                <input type="date" id="travelDate">
+
+                <label for="participants">Number of Participants:</label>
+                <input type="number" id="participants" min="1">
+
+                <label for="tourPackage">Tour Package:</label>
+
+                <select id="tourPackage">
+                    <option value="">Select Package</option>
+                    <option value="Kuching City Tour">Kuching City Tour - RM350</option>
+                    <option value="Miri Adventure Tour">Miri Adventure Tour - RM400</option>
+                </select>
+
+                <button type="submit">
+                    Submit Booking
+                </button>
+
+            </form>
+
+            <p id="bookingMessage"></p>
+
+            <a href="#home" class="ui-btn" data-transition="slide">
+                Back to Home
+            </a>
+
+        </div>
+    </div>
+
+
+    <!-- CONTACT PAGE -->
+    <div data-role="page" id="contact">
+
+        <div data-role="header">
+            <a href="#home" data-transition="slide" data-direction="reverse">Back</a>
+            <h1>Contact Us</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+
+            <h2>Contact Sarawak Tour</h2>
+
+            <p>
+                Have any questions about our tour packages?
+            </p>
+
+            <button onclick="openContactModal()">
+                Contact Us
+            </button>
+
+        </div>
+    </div>
+
+
+    <!-- CONTACT MODAL -->
+    <div data-role="popup" id="contactModal" data-dismissible="false">
+
+        <div class="modal-content">
+
+            <h2>Contact Us</h2>
+
+            <form id="contactForm">
+
+                <label for="contactName">Name:</label>
+                <input type="text" id="contactName" placeholder="Enter your name">
+
+                <label for="contactEmail">Email:</label>
+                <input type="email" id="contactEmail" placeholder="Enter your email">
+
+                <label for="message">Message:</label>
+                <textarea id="message" placeholder="Enter your message"></textarea>
+
+                <label>
+                    <input type="checkbox" id="consent">
+                    I agree that my information may be used responsibly for this enquiry.
+                </label>
+
+                <p id="contactError"></p>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+                <button type="button" onclick="closeContactModal()">
+                    Close
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
